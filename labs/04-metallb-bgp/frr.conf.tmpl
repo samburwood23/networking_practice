@@ -1,0 +1,15 @@
+frr defaults datacenter
+hostname tor
+!
+router bgp 64512
+ bgp router-id __ROUTER_IP__
+ no bgp ebgp-requires-policy
+ neighbor K8S peer-group
+ neighbor K8S remote-as 64513
+ ! Every k3d node on the docker network may peer with us; MetalLB opens the session.
+ bgp listen range __SUBNET__ peer-group K8S
+ !
+ address-family ipv4 unicast
+  maximum-paths 8
+ exit-address-family
+exit

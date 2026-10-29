@@ -34,3 +34,5 @@ Then work through the labs in order:
 
 1. [`labs/01-netns-veth`](labs/01-netns-veth/) – namespaces, veth pairs, a bridge, NAT
 2. [`labs/02-k3d-cilium`](labs/02-k3d-cilium/) – CNI-less k3d cluster, then install Cilium yourself
+3. [`labs/03-containerlab-frr`](labs/03-containerlab-frr/) – two FRR routers peering over eBGP
+4. [`labs/04-metallb-bgp`](labs/04-metallb-bgp/) – MetalLB in BGP mode peering with an FRR router
